@@ -3,71 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services - Business Portal</title>
+  <title>Our Services - Sweet Crumbs Cake Bakery</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="/" class="logo">Business Portal</a>
-      <ul class="nav-menu">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/services" class="nav-link active">Our Services</a></li>
-        <li><a href="/contact" class="nav-link">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
+<body class="inner-page">
+  <header class="bakery-header">
+    <button class="menu-button" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="/" class="bakery-logo">
+      <span class="logo-mark">BAKERY</span>
+      <span class="logo-subtitle">Sweet Crumbs</span>
+    </a>
+    <nav class="bakery-nav">
+      <a href="/">Home</a>
+      <a href="/services" class="active">Our Services</a>
+      <a href="/contact">Contact us</a>
+    </nav>
+    <a href="/contact" class="outline-button">Order Now</a>
+  </header>
 
-  <div class="container">
-    <div class="page-content">
-      <h1>Our Services</h1>
-      <p class="intro-text">
-        We provide comprehensive solutions to meet all your business requirements.
-      </p>
-      
-      <div class="services-grid">
-        <div class="service-item">
-          <h3>Web Development</h3>
-          <p>Custom web applications and responsive websites designed to meet your specific needs. We use modern technologies and best practices to deliver high-quality solutions.</p>
-        </div>
-        
-        <div class="service-item">
-          <h3>Mobile Applications</h3>
-          <p>Native and cross-platform mobile app development for iOS and Android. Our team creates intuitive and feature-rich applications that engage users.</p>
-        </div>
-        
-        <div class="service-item">
-          <h3>Consulting</h3>
-          <p>Strategic IT consulting to help you leverage technology for business growth. We analyze your needs and provide tailored recommendations.</p>
-        </div>
-        
-        <div class="service-item">
-          <h3>Cloud Solutions</h3>
-          <p>Scalable cloud infrastructure and migration services. We help you transition to the cloud securely and efficiently.</p>
-        </div>
-        
-        <div class="service-item">
-          <h3>Data Analytics</h3>
-          <p>Transform your data into actionable insights. Our analytics solutions help you make informed business decisions.</p>
-        </div>
-        
-        <div class="service-item">
-          <h3>Support & Maintenance</h3>
-          <p>Ongoing technical support and maintenance services to keep your systems running smoothly and securely.</p>
-        </div>
+  <main>
+    <section class="inner-hero services-hero">
+      <div>
+        <p class="section-kicker">Made with care</p>
+        <h1>Our Services</h1>
+        <p>Elegant cakes, soft pastries, and custom dessert tables for your sweetest moments.</p>
+      </div>
+    </section>
+
+    <section class="elegant-section">
+      <div class="services-grid elegant-grid">
+        <article class="service-item elegant-card">
+          <span class="service-number">01</span>
+          <h3>Birthday Cakes</h3>
+          <p>Colorful buttercream cakes with custom names, themes, candles, and soft decoration.</p>
+        </article>
+
+        <article class="service-item elegant-card">
+          <span class="service-number">02</span>
+          <h3>Wedding Cakes</h3>
+          <p>Tiered cakes with refined florals, delicate textures, and classic bakery flavors.</p>
+        </article>
+
+        <article class="service-item elegant-card">
+          <span class="service-number">03</span>
+          <h3>Cupcake Boxes</h3>
+          <p>Assorted cupcakes for parties, family gifts, baby showers, and office events.</p>
+        </article>
+
+        <article class="service-item elegant-card">
+          <span class="service-number">04</span>
+          <h3>Dessert Tables</h3>
+          <p>Mini cakes, cake pops, brownies, cookies, and small sweets arranged beautifully.</p>
+        </article>
+
+        <article class="service-item elegant-card">
+          <span class="service-number">05</span>
+          <h3>Custom Flavors</h3>
+          <p>Choose sponge, cream, fruit, chocolate, frosting, and toppings for your own cake.</p>
+        </article>
+
+        <article class="service-item elegant-card">
+          <span class="service-number">06</span>
+          <h3>Pre-Order Pickup</h3>
+          <p>Schedule your order during working hours and collect it fresh from the bakery.</p>
+        </article>
       </div>
 
-      <div class="cta-section">
-        <h2>Interested in Our Services?</h2>
-        <p>Contact us today to discuss how we can help your business succeed.</p>
-        <a href="/contact" class="btn">Get in Touch</a>
+      <div class="elegant-cta">
+        <h2>Need a cake this week?</h2>
+        <p>Send us your event date and guest count, and we will suggest the perfect size.</p>
+        <a href="/contact" class="btn dark-btn">Contact us</a>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <footer class="footer">
-    <p>&copy; 2026 Business Portal. All rights reserved.</p>
-    <p>Working hours: Monday - Friday, 9 AM - 5 PM</p>
+  <footer class="site-footer">
+    <a href="/" class="footer-logo">Sweet Crumbs</a>
+    <p>Fresh cakes, pastries, and dessert tables for elegant celebrations.</p>
+    <div class="social-links">
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+      </a>
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg>
+      </a>
+      <a href="#" aria-label="Snapchat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 0 5 2.4 5 5.6v2.1c0 1.4 1.3 2.2 2.6 2.6-.6 1.5-2 2.3-3.6 2.5-.7 1.5-2 2.2-4 2.2s-3.3-.7-4-2.2c-1.6-.2-3-.9-3.6-2.5 1.3-.4 2.6-1.2 2.6-2.6V8.6C7 5.4 9 3 12 3z"></path></svg>
+      </a>
+    </div>
+    <small>&copy; 2026 Sweet Crumbs Cake Bakery. Monday - Friday, 9 AM - 5 PM.</small>
   </footer>
 </body>
 </html>

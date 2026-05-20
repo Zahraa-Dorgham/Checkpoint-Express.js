@@ -5,14 +5,11 @@ const pagesRouter = require('./routes/pages');
 const app = express();
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
 
-
-
-
 app.use('/', pagesRouter);
-app.use('/product', require('./routes/product'));
 
 
 

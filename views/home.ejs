@@ -3,55 +3,401 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Business Portal</title>
-  <link rel="stylesheet" href="/styles.css">
+  <title>Bakery - Sweet Crumbs</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f5f2;
+      color: #211815;
+      min-height: 100vh;
+    }
+
+    .bakery-header {
+      height: 64px;
+      width: 100%;
+      padding: 0 28px;
+      background: rgba(15, 12, 11, 0.84);
+      color: white;
+      display: grid;
+      grid-template-columns: 40px 170px 1fr 120px;
+      align-items: center;
+      gap: 18px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .menu-button {
+      width: 28px;
+      height: 28px;
+      border: 0;
+      background: transparent;
+      display: grid;
+      place-content: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      width: 16px;
+      height: 2px;
+      background: white;
+      display: block;
+    }
+
+    .bakery-logo {
+      color: white;
+      text-decoration: none;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .logo-mark {
+      display: block;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .logo-subtitle {
+      display: block;
+      margin-top: 3px;
+      font-size: 0.5rem;
+      letter-spacing: 1.8px;
+      color: #cdbeb9;
+    }
+
+    .bakery-nav {
+      display: flex;
+      justify-content: center;
+      gap: 54px;
+    }
+
+    .bakery-nav a {
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .bakery-nav a:hover,
+    .bakery-nav a.active {
+      color: #f1c0c6;
+    }
+
+    .outline-button {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .bakery-hero {
+  height: 500px;
+  /* Correction ici : on utilise background-image et une syntaxe standard */
+  background-image: 
+    linear-gradient(to right, rgba(255, 224, 226, 0.04), rgba(95, 56, 58, 0.18) 44%, rgba(255, 224, 226, 0.04)),
+    url('https://i.pinimg.com/736x/8f/9c/35/8f9c359c983169a6bac96bceeda3b16b.jpg'),
+    url('https://i.pinimg.com/736x/a6/0b/01/a60b01106b64b7872b346b9c0f3e9bf9.jpg');
+  background-color: #ead0cf;
+  background-size: contain;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center, left center, right center;
+  position: relative ;
+  display: flex;
+  align-items: center;
+}
+
+
+    .bakery-hero-copy {
+      color: white;
+      max-width: 500px;
+      text-transform: uppercase;
+      position: relative;
+      left: 600px;
+    }
+
+    .bakery-hero-copy p {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .bakery-hero-copy h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(4rem, 9vw, 7.4rem);
+      line-height: 0.9;
+      font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    .bakery-hero-copy span {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 26px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: white;
+      color: #241917;
+      border-radius: 999px;
+      padding: 11px 22px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+
+    .slider-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .products-section {
+      background: #f8f7f5;
+      padding: 34px 28px 52px;
+    }
+
+    .products-section h2 {
+      color: #211815;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .product-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(36, 25, 23, 0.14);
+    }
+
+    .product-card img {
+      width: 100%;
+    }
+
+    .product-info {
+      padding: 13px 12px 15px;
+    }
+
+    .product-info h3 {
+      color: #2b201d;
+      font-size: 0.92rem;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .product-info p {
+      color: #84726b;
+      font-size: 0.68rem;
+      line-height: 1.2;
+      margin-bottom: 9px;
+    }
+
+    .product-info strong {
+      color: #241917;
+      font-size: 0.86rem;
+    }
+
+    .site-footer {
+      background: #ead0cf;
+      color: #3d2b24;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .footer-logo {
+      color: #3d2b24;
+      display: inline-block;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      text-decoration: none;
+    }
+
+    .site-footer p {
+      color: #6b554c;
+      margin: 0 auto 1.25rem;
+      max-width: 520px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(61, 43, 36, 0.32);
+      border-radius: 50%;
+      color: #3d2b24;
+      display: grid;
+      place-items: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: #8b3a4a;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .social-links svg {
+      width: 21px;
+      height: 21px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+    }
+
+    .social-links a:nth-child(2) svg,
+    .social-links a:nth-child(3) svg {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .site-footer small {
+      color: #6b554c;
+    }
+
+   
+  </style>
 </head>
-<body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="/" class="logo">Business Portal</a>
-      <ul class="nav-menu">
-        <li><a href="/" class="nav-link active">Home</a></li>
-        <li><a href="/services" class="nav-link">Our Services</a></li>
-        <li><a href="/contact" class="nav-link">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
+<body class="landing-page">
+  <header class="bakery-header">
+    <button class="menu-button" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="/" class="bakery-logo">
+      <span class="logo-mark">BAKERY</span>
+      <span class="logo-subtitle">Sweet Crumbs</span>
+    </a>
+    <nav class="bakery-nav">
+      <a href="/" class="active">Home</a>
+      <a href="/services">Our Services</a>
+      <a href="/contact">Contact us</a>
+    </nav>
+    <a href="/contact" class="outline-button">Order Now</a>
+  </header>
 
-  <div class="container">
-    <div class="page-content">
-      <h1>Welcome to Our Business Portal</h1>
-      <p class="intro-text">
-        We are a dedicated team providing high-quality services to our clients worldwide. 
-        This portal is your gateway to exploring our offerings and getting in touch with us.
-      </p>
+  <main>
+    <section class="bakery-hero">
+      <div class="bakery-hero-copy">
+        <p>Elegant</p>
+        <h1>Bakery</h1>
+        <span>Fresh cake for every celebration</span>
+        <a href="/contact" class="hero-button">Order Now</a>
+      </div>
       
-      <div class="features">
-        <div class="feature-card">
-          <h3>Professional Services</h3>
-          <p>We offer a wide range of professional services tailored to your business needs.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Expert Team</h3>
-          <p>Our team consists of experienced professionals dedicated to your success.</p>
-        </div>
-        <div class="feature-card">
-          <h3>24/7 Support</h3>
-          <p>Need help? Our support team is ready to assist you during working hours.</p>
-        </div>
-      </div>
+    </section>
 
-      <div class="cta-section">
-        <h2>Ready to Get Started?</h2>
-        <p>Explore our services or contact us today to learn more about how we can help your business grow.</p>
-        <a href="/services" class="btn">Explore Our Services</a>
+    <section class="products-section">
+      <h2>Products</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="https://i1-e.pinimg.com/1200x/6c/36/e9/6c36e98e50931295056fd7c2c94e91e3.jpg" alt="Raspberry cream cake">
+          <div class="product-info">
+            <h3>Raspococo</h3>
+            <p>Raspberry cream cupcake</p>
+            <strong>7 DT</strong>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://i.pinimg.com/736x/d2/68/76/d268767e9fe329d7bea9bfb3da683a54.jpg" alt="Layer cake slice">
+          <div class="product-info">
+            <h3>Vanilas</h3>
+            <p>Vanilla cupcake</p>
+            <strong>5 DT</strong>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://i1-e.pinimg.com/736x/79/14/b9/7914b96f14474a8532b9ae0c06b7e891.jpg" alt="Pink cupcake">
+          <div class="product-info">
+            <h3>Straw</h3>
+            <p>Strawberry cupcake</p>
+            <strong>6 DT</strong>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://i1-e.pinimg.com/1200x/00/b6/2a/00b62a6f310635191de6efda47f3ff3a.jpg" alt="Berry tart">
+          <div class="product-info">
+            <h3>Chocococo</h3>
+            <p>Chocolate cupcake</p>
+            <strong>4 DT</strong>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://i.pinimg.com/736x/6b/f3/d4/6bf3d4c06ed7bb51d8e4714410bbc567.jpg" alt="Blueberry cake">
+          <div class="product-info">
+            <h3>Pistachio</h3>
+            <p>Pistachio cupcake</p>
+            <strong>7 DT</strong>
+          </div>
+        </article>
       </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a href="/" class="footer-logo">Sweet Crumbs</a>
+    <p>Fresh cakes, pastries, and dessert tables for elegant celebrations.</p>
+    <div class="social-links">
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+      </a>
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg>
+      </a>
+      <a href="#" aria-label="Snapchat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 0 5 2.4 5 5.6v2.1c0 1.4 1.3 2.2 2.6 2.6-.6 1.5-2 2.3-3.6 2.5-.7 1.5-2 2.2-4 2.2s-3.3-.7-4-2.2c-1.6-.2-3-.9-3.6-2.5 1.3-.4 2.6-1.2 2.6-2.6V8.6C7 5.4 9 3 12 3z"></path></svg>
+      </a>
     </div>
-  </div>
-
-  <footer class="footer">
-    <p>&copy; 2026 Business Portal. All rights reserved.</p>
-    <p>Working hours: Monday - Friday, 9 AM - 5 PM</p>
+    <small>&copy; 2026 Sweet Crumbs Cake Bakery. Monday - Friday, 9 AM - 6 PM.</small>
   </footer>
 </body>
 </html>
