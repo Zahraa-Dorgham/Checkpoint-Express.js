@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> - Business Portal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">Business Portal</a>
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/services" class="nav-link">Our Services</a></li>
+        <li><a href="/contact" class="nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <%- body %>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Business Portal. All rights reserved.</p>
+    <p>Working hours: Monday - Friday, 9 AM - 5 PM</p>
+  </footer>
+</body>
+</html>
