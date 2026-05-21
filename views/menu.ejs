@@ -4,142 +4,371 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - Sweet Crumbs Cake Bakery</title>
-  <link rel="stylesheet" href="/styles.css">
   <style>
-    .menu-hero {
-      background: linear-gradient(135deg, rgba(234, 208, 207, 0.3), rgba(139, 58, 74, 0.2)),
-                  url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      min-height: 300px;
-      padding-top: 5rem;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .menu-section {
-      padding: 3rem 0;
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #3d2b24;
+  background-color: #fff8f5;
+}
 
-    .menu-section h2 {
-      text-align: center;
-      color: #211815;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+.bakery-header {
+  height: 64px;
+  width: 100%;
+  padding: 0 28px;
+  background: rgba(15, 12, 11, 0.84);
+  color: white;
+  display: grid;
+  grid-template-columns: 40px 170px 1fr 120px;
+  align-items: center;
+  gap: 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
 
-    .menu-section .section-description {
-      text-align: center;
-      color: #6b5a52;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+.menu-button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
 
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+.menu-button span {
+  width: 16px;
+  height: 2px;
+  background: white;
+  display: block;
+}
 
-    .menu-item {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.bakery-logo {
+  color: white;
+  text-decoration: none;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
 
-    .menu-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
+.logo-mark {
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
 
-    .menu-item img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
+.logo-subtitle {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.5rem;
+  letter-spacing: 1.8px;
+  color: #cdbeb9;
+}
 
-    .menu-item-content {
-      padding: 1.5rem;
-    }
+.bakery-nav {
+  display: flex;
+  justify-content: center;
+  gap: 54px;
+}
 
-    .menu-item h3 {
-      color: #2b201d;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+.bakery-nav a {
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 
-    .menu-item .price {
-      color: #8b3a4a;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin: 1rem 0 0.5rem;
-    }
+.bakery-nav a:hover,
+.bakery-nav a.active {
+  color: #f1c0c6;
+}
 
-    .menu-item p {
-      color: #6b5a52;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin-bottom: 0.8rem;
-    }
+.outline-button {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
 
-    .menu-item .description {
-      font-size: 0.85rem;
-      color: #84726b;
-      margin: 0.8rem 0;
-      line-height: 1.4;
-    }
+.inner-page {
+  background:
+    linear-gradient(180deg, rgba(255, 248, 245, 0.94), rgba(255, 248, 245, 1)),
+    url('https://i.pinimg.com/736x/8f/9c/35/8f9c359c983169a6bac96bceeda3b16b.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 64px;
+}
 
-    .menu-divider {
-      width: 60px;
-      height: 2px;
-      background: #8b3a4a;
-      margin: 1rem auto 2rem;
-    }
+main {
+  min-height: calc(100vh - 64px);
+}
 
-    .inner-hero {
-      background: linear-gradient(to right, rgba(255, 224, 226, 0.1), rgba(95, 56, 58, 0.15) 44%, rgba(255, 224, 226, 0.1));
-      background-size: cover;
-      background-position: center;
-      min-height: 280px;
-      padding-top: 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #211815;
-    }
+.inner-hero {
+  min-height: 320px;
+  padding: 5rem 2rem 4rem;
+  color: #211815;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
-    .inner-hero div {
-      max-width: 600px;
-    }
+.inner-hero > div {
+  position: relative;
+  max-width: 760px;
+}
 
-    .inner-hero h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #211815;
-    }
+.inner-hero h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #211815;
+}
 
-    .inner-hero .section-kicker {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-      color: #8b3a4a;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
+.section-kicker {
+  color: #d69a5f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
 
-    .inner-hero p {
-      font-size: 1.1rem;
-      color: #6b5a52;
-    }
+.inner-hero p {
+  font-size: 1rem;
+  color: #6b5a52;
+  line-height: 1.6;
+}
+
+.elegant-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.menu-section {
+  padding: 3rem 2rem;
+}
+
+.menu-section h2 {
+  text-align: center;
+  color: #211815;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+}
+
+.menu-section .section-description {
+  text-align: center;
+  color: #6b5a52;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.menu-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d69a5f, transparent);
+  margin: 1rem auto 2rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.menu-item {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(61, 43, 36, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(214, 154, 95, 0.2);
+}
+
+.elegant-card.menu-item {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(214, 154, 95, 0.22);
+  box-shadow: 0 18px 45px rgba(61, 43, 36, 0.12);
+}
+
+.menu-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(61, 43, 36, 0.18);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-item-content {
+  padding: 1.5rem;
+}
+
+.menu-item h3 {
+  color: #8b3a4a;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.menu-item .price {
+  color: #d69a5f;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0.8rem 0 1rem;
+}
+
+.menu-item p {
+  color: #6b5a52;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+.menu-item .description {
+  font-size: 0.85rem;
+  color: #84726b;
+  margin: 0.8rem 0;
+  line-height: 1.4;
+}
+
+.site-footer {
+  background: #ead0cf;
+  color: #3d2b24;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-top: 2px solid rgba(214, 154, 95, 0.3);
+}
+
+.footer-logo {
+  color: #3d2b24;
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-footer p {
+  color: #6b5a52;
+  margin: 0 auto 1.25rem;
+  max-width: 520px;
+  font-size: 0.95rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(61, 43, 36, 0.28);
+  border-radius: 50%;
+  color: #3d2b24;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #8b3a4a;
+  border-color: #8b3a4a;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.social-links svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.social-links a:nth-child(2) svg,
+.social-links a:nth-child(3) svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.site-footer small {
+  color: #9b8a7f;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .bakery-header {
+    grid-template-columns: 40px 1fr 120px;
+  }
+
+  .bakery-nav {
+    display: none;
+  }
+
+  .inner-hero {
+    min-height: 260px;
+    padding: 3rem 1rem 2rem;
+  }
+
+  .inner-hero h1 {
+    font-size: 2rem;
+  }
+
+  .elegant-section,
+  .menu-section {
+    padding: 2rem 1rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .menu-item img {
+    height: 150px;
+  }
+}
   </style>
 </head>
 <body class="inner-page">
@@ -178,7 +407,7 @@
       
       <div class="menu-grid">
         <div class="menu-item elegant-card">
-          <img src="/images/chocoslice.jpg" alt="Chocolate Slice">
+          <img src="public/images/chocoslice.jpg" alt="Chocolate Slice">
           <div class="menu-item-content">
             <h3>Chocolate Slice</h3>
             <p class="price">5 DT</p>
@@ -187,7 +416,7 @@
         </div>
 
         <div class="menu-item elegant-card">
-          <img src="/images/vanillaslice.jpg" alt="Vanilla Slice">
+          <img src="public/images/vanillaslice.jpg" alt="Vanilla Slice">
           <div class="menu-item-content">
             <h3>Vanilla Slice</h3>
             <p class="price">8 DT</p>
@@ -196,7 +425,7 @@
         </div>
 
         <div class="menu-item elegant-card">
-          <img src="/images/velvetslice.jpg" alt="Velvet Slice">
+          <img src="public/images/velvetslice.jpg" alt="Velvet Slice">
           <div class="menu-item-content">
             <h3>Velvet Slice</h3>
             <p class="price">5 DT</p>
@@ -205,7 +434,7 @@
         </div>
 
         <div class="menu-item elegant-card">
-          <img src="/images/mangoslice.jpg" alt="Mango Slice">
+          <img src="public/images/mangoslice.jpg" alt="Mango Slice">
           <div class="menu-item-content">
             <h3>Mango Slice</h3>
             <p class="price">10 DT</p>
@@ -214,7 +443,7 @@
         </div>
 
         <div class="menu-item elegant-card">
-          <img src="/images/bananaslice.jpg" alt="Banana Slice">
+          <img src="public/images/bananaslice.jpg" alt="Banana Slice">
           <div class="menu-item-content">
             <h3>Banana Slice</h3>
             <p class="price">5 DT</p>
@@ -232,7 +461,7 @@
       <div class="menu-grid">
         <div class="menu-item elegant-card">
           <a href="https://youtube.com/shorts/REnyClsyRZE?si=DhJozfkOUO9xBat3" style="text-decoration: none;">
-            <img src="/images/chocoroll.jpg" alt="Chocolate Roll">
+            <img src="public/images/chocoroll.jpg" alt="Chocolate Roll">
           </a>
           <div class="menu-item-content">
             <h3>Chocolate Roll</h3>
@@ -244,7 +473,7 @@
 
         <div class="menu-item elegant-card">
           <a href="https://youtube.com/shorts/OgmlOPhPr8A?si=4ckdVxNVfTNSNM0u" style="text-decoration: none;">
-            <img src="/images/fraiseroll.jpg" alt="Vanilla-Strawberry Roll">
+            <img src="public/images/fraiseroll.jpg" alt="Vanilla-Strawberry Roll">
           </a>
           <div class="menu-item-content">
             <h3>Vanilla-Strawberry Roll</h3>
@@ -256,7 +485,7 @@
 
         <div class="menu-item elegant-card">
           <a href="https://youtube.com/shorts/nOgBqPNmhXM?si=xp-6cmQ3QDP8LvYz" style="text-decoration: none;">
-            <img src="/images/pistachioroll.jpg" alt="Pistachio-Raspberry Roll">
+            <img src="public/images/pistachioroll.jpg" alt="Pistachio-Raspberry Roll">
           </a>
           <div class="menu-item-content">
             <h3>Pistachio-Raspberry Roll</h3>
@@ -268,7 +497,7 @@
 
         <div class="menu-item elegant-card">
           <a href="https://youtube.com/shorts/YKZjTCmY-FU?si=_pMx7fvgDFNjCVds" style="text-decoration: none;">
-            <img src="/images/mixedfruitroll.jpg" alt="Tropical Roll">
+            <img src="public/images/mixedfruitroll.jpg" alt="Tropical Roll">
           </a>
           <div class="menu-item-content">
             <h3>Tropical Roll</h3>
@@ -288,7 +517,7 @@
       
       <div class="menu-grid">
         <div class="menu-item elegant-card">
-          <img src="/images/tiramisu.jpg" alt="Tiramisu">
+          <img src="public/images/tiramisu.jpg" alt="Tiramisu">
           <div class="menu-item-content">
             <h3>Tiramisu</h3>
             <p class="price">20 DT</p>
@@ -298,7 +527,7 @@
         </div>
 
         <div class="menu-item elegant-card">
-          <img src="/images/cannoli.jpg" alt="Cannoli">
+          <img src="public/images/cannoli.jpg" alt="Cannoli">
           <div class="menu-item-content">
             <h3>Cannoli</h3>
             <p class="price">15 DT</p>
@@ -308,7 +537,7 @@
         </div>
 
         <div class="menu-item elegant-card">
-          <img src="/images/sfogliatella.jpg" alt="Sfogliatella">
+          <img src="public/images/sfogliatella.jpg" alt="Sfogliatella">
           <div class="menu-item-content">
             <h3>Sfogliatella</h3>
             <p class="price">18 DT</p>
@@ -328,7 +557,7 @@
       <h3 style="text-align: center; color: #211815; margin: 2rem 0 1rem; font-size: 1.2rem;">Morning Viennoiseries</h3>
       <div class="menu-grid">
         <div class="menu-item elegant-card">
-          <img src="/images/croissant.jpg" alt="Butter Croissant">
+          <img src="public/images/croissant.jpg" alt="Butter Croissant">
           <div class="menu-item-content">
             <h3>Butter Croissant</h3>
             <p class="price">2 DT</p>
@@ -338,7 +567,7 @@
         </div>
 
         <div class="menu-item elegant-card">
-          <img src="/images/painchocolat.jpg" alt="Pain au Chocolat">
+          <img src="public/images/painchocolat.jpg" alt="Pain au Chocolat">
           <div class="menu-item-content">
             <h3>Pain au Chocolat</h3>
             <p class="price">2.5 DT</p>
@@ -348,7 +577,7 @@
         </div>
 
         <div class="menu-item elegant-card">
-          <img src="/images/eclair.jpg" alt="Éclair">
+          <img src="public/images/eclair.jpg" alt="Éclair">
           <div class="menu-item-content">
             <h3>Éclair</h3>
             <p class="price">3 DT</p>

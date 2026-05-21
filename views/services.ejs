@@ -4,7 +4,352 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services - Sweet Crumbs </title>
-  <link rel="stylesheet" href="/styles.css">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #3d2b24;
+  background-color: #fff8f5;
+}
+
+.landing-page {
+  background: #f8f5f2;
+  color: #211815;
+  min-height: 100vh;
+}
+
+.bakery-header {
+  height: 64px;
+  width: 100%;
+  padding: 0 28px;
+  background: rgba(15, 12, 11, 0.84);
+  color: white;
+  display: grid;
+  grid-template-columns: 40px 170px 1fr 120px;
+  align-items: center;
+  gap: 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.menu-button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  width: 16px;
+  height: 2px;
+  background: white;
+  display: block;
+}
+
+.bakery-logo {
+  color: white;
+  text-decoration: none;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.logo-mark {
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.logo-subtitle {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.5rem;
+  letter-spacing: 1.8px;
+  color: #cdbeb9;
+}
+
+.bakery-nav {
+  display: flex;
+  justify-content: center;
+  gap: 54px;
+}
+
+.bakery-nav a {
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.bakery-nav a:hover,
+.bakery-nav a.active {
+  color: #f1c0c6;
+}
+
+.outline-button {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.inner-page {
+  background:
+    linear-gradient(180deg, rgba(255, 248, 245, 0.94), rgba(255, 248, 245, 1)),
+    url('https://i.pinimg.com/736x/8f/9c/35/8f9c359c983169a6bac96bceeda3b16b.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 64px;
+}
+
+.inner-hero {
+  min-height: 360px;
+  padding: 7rem 2rem 4rem;
+  color: white;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.inner-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(32, 23, 20, 0.8), rgba(139, 58, 74, 0.42));
+}
+
+.inner-hero > div {
+  position: relative;
+  max-width: 760px;
+}
+
+.services-hero {
+  background-image: url('https://i1-e.pinimg.com/1200x/32/8f/26/328f26bb568f31581dbece8a2cfe5c45.jpg');
+  background-size: 700px;
+}
+
+.section-kicker {
+  color: #d69a5f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.inner-hero h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.inner-hero p:last-child {
+  font-size: 1.12rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.elegant-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.elegant-grid {
+  gap: 1.25rem;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.elegant-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(214, 154, 95, 0.22);
+  box-shadow: 0 18px 45px rgba(61, 43, 36, 0.12);
+}
+
+.service-item.elegant-card {
+  border-left: 0;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item.elegant-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 55px rgba(61, 43, 36, 0.18);
+}
+
+.service-number {
+  display: block;
+  color: #d69a5f;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.service-item h3 {
+  color: #8b3a4a;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-item p {
+  color: #6b554c;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.elegant-cta {
+  margin-top: 2rem;
+  padding: 2.5rem;
+  border-radius: 8px;
+  background: #281d19;
+  color: white;
+  text-align: center;
+}
+
+.elegant-cta h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.elegant-cta p {
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 1.5rem;
+}
+
+.dark-btn {
+  display: inline-block;
+  background: #8b3a4a;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dark-btn:hover {
+  background: #6f2e3b;
+  transform: scale(1.04);
+}
+
+.site-footer {
+  background: #ead0cf;
+  color: #3d2b24;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.footer-logo {
+  color: #3d2b24;
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+}
+
+.site-footer p {
+  color: #6b5a52;
+  margin: 0 auto 1.25rem;
+  max-width: 520px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(61, 43, 36, 0.28);
+  border-radius: 50%;
+  color: #3d2b24;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #8b3a4a;
+  transform: translateY(-3px);
+}
+
+.social-links svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.social-links a:nth-child(2) svg,
+.social-links a:nth-child(3) svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.site-footer small {
+  color: #9b8a7f;
+}
+
+main {
+  min-height: calc(100vh - 64px);
+}
+
+@media (max-width: 768px) {
+  .inner-hero {
+    min-height: 300px;
+    padding-top: 5rem;
+  }
+
+  .elegant-section {
+    padding: 2rem 1rem;
+  }
+
+  .elegant-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  </style>
 </head>
 <body class="inner-page">
   <header class="bakery-header">

@@ -4,7 +4,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     let data = new Date();
     let hours = data.getHours();
-    if (hours >= 9 && hours <= 17) {
+    if (hours > 9 && hours < 17) {
         res.render('home');
     } else {
         res.render('close');
