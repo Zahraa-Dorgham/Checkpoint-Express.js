@@ -736,14 +736,14 @@ body {
 }
 
 .site-footer {
-  background: #1f1613;
-  color: white;
+  background: #ead0cf;
+  color: #3d2b24;
   text-align: center;
   padding: 3rem 1.5rem;
 }
 
 .footer-logo {
-  color: white;
+  color: #3d2b24;
   display: inline-block;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 2rem;
@@ -752,7 +752,7 @@ body {
 }
 
 .site-footer p {
-  color: rgba(255, 255, 255, 0.72);
+  color: #6b5a52;
   margin: 0 auto 1.25rem;
   max-width: 520px;
 }
@@ -767,9 +767,9 @@ body {
 .social-links a {
   width: 42px;
   height: 42px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(61, 43, 36, 0.28);
   border-radius: 50%;
-  color: white;
+  color: #3d2b24;
   display: grid;
   place-items: center;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -797,7 +797,7 @@ body {
 }
 
 .site-footer small {
-  color: rgba(255, 255, 255, 0.58);
+  color: #9b8a7f;
 }
 
 @media (max-width: 768px) {

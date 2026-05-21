@@ -1,11 +1,9 @@
 const express = require('express');
-const path = require('path');
 const pagesRouter = require('./routes/pages');
 
 const app = express();
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
 
